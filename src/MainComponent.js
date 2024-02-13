@@ -14,7 +14,7 @@ export default class MainComponent extends React.Component {
     handleLogicError = () => {
       try {
         // Simulate an error
-        throw new Error('A simulated logic error occurred! This error is caught in the event structure.');
+        throw new Error('EVENT_ERROR_EXAMPLE');
       } catch (error) {
         console.error(error);
         // Trickle the error up to the error boundary
@@ -24,17 +24,17 @@ export default class MainComponent extends React.Component {
   
     handleInfoCall = () => {
       // Example to simulate an error
-      console.info("Example info log");
+      console.info("INFO_LOG_INITIATED", { data: "some data" });
     }
   
     handleWarnCall = () => {
       // Example to simulate an error
-      console.warn("Warning log initiated");
+      console.warn("WARNING_LOG_INITIATED", { data: "some data" });
     }
   
     handleSoftError = () => {
       // Example to simulate an error log
-      console.error("Soft error initiated");
+      console.error("SOFT_ERROR_INITIATED", { data: "some data" });
     }
   
   
@@ -43,7 +43,7 @@ export default class MainComponent extends React.Component {
         if(this.state.error) {
           throw this.state.error;
         }
-        throw new Error('A simulated error occurred!');
+        throw new Error('STATE_CHANGE_ERROR_EXAMPLE');
       }
       return (
         <div>
